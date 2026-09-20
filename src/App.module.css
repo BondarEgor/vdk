@@ -1,0 +1,25 @@
+.main {
+  position: relative;
+}
+
+.footer {
+  background: var(--deep);
+  color: rgb(244 240 232 / 0.6);
+  padding-block: 2.2rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+}
+
+.wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem 2.5rem;
+  justify-content: space-between;
+}
+
+.tagline {
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  font-size: 0.68rem;
+  align-self: center;
+}

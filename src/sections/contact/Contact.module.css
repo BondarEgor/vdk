@@ -1,0 +1,132 @@
+.section {
+  background: var(--milk);
+  padding-block: clamp(5rem, 13vh, 9.5rem);
+  position: sticky;
+  top: 60px;
+  z-index: 5;
+  height: 100svh;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: clamp(2.5rem, 6vw, 6rem);
+  align-items: start;
+}
+
+.overline {
+  margin-bottom: 1.5rem;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  color: var(--dawn);
+}
+
+.title {
+  max-width: 16ch;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(1.65rem, 3.6vw, 3.3rem);
+  line-height: 1.14;
+}
+
+.lead {
+  max-width: 40ch;
+  margin-top: 1.7rem;
+  line-height: 1.7;
+  color: rgb(16 28 38 / 0.72);
+}
+
+.field {
+  margin-bottom: 1.7rem;
+}
+
+.field label {
+  display: block;
+  margin-bottom: 0.45rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgb(16 28 38 / 0.58);
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  padding: 0.5rem 0;
+  border: 0;
+  border-bottom: 1px solid rgb(16 28 38 / 0.28);
+  border-radius: 0;
+  background: transparent;
+  font-size: 1.05rem;
+  font-weight: 500;
+  resize: vertical;
+  transition: border-color 0.3s ease;
+}
+
+.field input:focus,
+.field textarea:focus {
+  border-color: var(--dawn);
+}
+
+.field [aria-invalid="true"] {
+  border-color: #bf4b2c;
+}
+
+.error {
+  margin-top: 0.45rem;
+  font-size: 0.82rem;
+  color: #bf4b2c;
+}
+
+.submit {
+  margin-top: 0.4rem;
+  padding: 1.05rem 1.9rem;
+  border: 0;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--milk);
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 0.82rem;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.submit:hover:not(:disabled) {
+  background: var(--sea);
+  transform: translateY(-1px);
+}
+
+.submit:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.success {
+  padding: 2rem 0;
+}
+
+.successTitle {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(1.4rem, 2.6vw, 2.2rem);
+  color: var(--sea);
+}
+
+.success p:last-child {
+  margin-top: 0.9rem;
+  max-width: 36ch;
+  color: rgb(16 28 38 / 0.72);
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

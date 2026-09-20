@@ -1,0 +1,61 @@
+.header {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.15rem clamp(1.25rem, 4vw, 3rem);
+  color: var(--milk);
+  transition:
+    background-color 0.4s ease,
+    color 0.4s ease,
+    padding-block 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.scrolled {
+  padding-block: 0.7rem;
+  backdrop-filter: blur(12px);
+  color: var(--ink);
+  box-shadow: 0 1px 0 rgb(16 28 38 / 0.08);
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 0.9rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: inherit;
+}
+
+.logo span {
+  color: var(--dawn);
+}
+
+.cta {
+  padding: 0.55em 1.2em;
+  border: 1px solid rgb(244 240 232 / 0.45);
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  color: inherit;
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.scrolled .cta {
+  border-color: rgb(16 28 38 / 0.3);
+}
+
+.cta:hover {
+  background: var(--dawn);
+  border-color: var(--dawn);
+  color: var(--deep);
+}
