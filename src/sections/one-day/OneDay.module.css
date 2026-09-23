@@ -1,9 +1,4 @@
 .section {
-  background: var(--deep);
-  color: var(--milk);
-  position: sticky;
-  top: 60px;
-  height: 180svh;
   z-index: 2;
 }
 

@@ -4,9 +4,6 @@
   overflow: hidden;
   background: var(--deep);
   color: var(--milk);
-  position: sticky;
-  top: 60px;
-  z-index: 4;
   height: 100svh;
 }
 

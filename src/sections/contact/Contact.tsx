@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Reveal from "../../shared/reveal/Reveal.tsx";
-import styles from "./Contact.module.css";
+import s from "./Contact.module.css";
 
 const empty = { name: "", contact: "", question: "" };
 
@@ -36,15 +36,13 @@ export default function Contact() {
   };
 
   return (
-    <section className={styles.section} id="contact">
+    <section className={s.section} id="contact">
       <div className="wrap">
-        <div className={styles.grid}>
+        <div className={s.grid}>
           <Reveal>
-            <p className={styles.overline}>первый шаг</p>
-            <h2 className={styles.title}>
-              Хотите узнать, как это — жить здесь?
-            </h2>
-            <p className={styles.lead}>
+            <p className={s.overline}>первый шаг</p>
+            <h2 className={s.title}>Хотите узнать, как это — жить здесь?</h2>
+            <p className={s.lead}>
               Оставьте контакт — пришлем короткое письмо о переезде: районы,
               море, первые шаги. Без спама — только город как он есть.
             </p>
@@ -52,16 +50,16 @@ export default function Contact() {
 
           <Reveal delay={120}>
             {status === "success" ? (
-              <div className={styles.success} role="status">
-                <p className={styles.successTitle}>Спасибо!</p>
+              <div className={s.success} role="status">
+                <p className={s.successTitle}>Спасибо!</p>
                 <p>
                   Мы получили контакт и напишем в ближайшее время. А пока —
                   представьте рассвет.
                 </p>
               </div>
             ) : (
-              <form className={styles.form} onSubmit={onSubmit} noValidate>
-                <div className={styles.field}>
+              <form className={s.form} onSubmit={onSubmit} noValidate>
+                <div className={s.field}>
                   <label htmlFor="field-name">Имя</label>
                   <input
                     id="field-name"
@@ -76,13 +74,13 @@ export default function Contact() {
                     }
                   />
                   {errors.name && (
-                    <p className={styles.error} id="field-name-error">
+                    <p className={s.error} id="field-name-error">
                       {errors.name}
                     </p>
                   )}
                 </div>
 
-                <div className={styles.field}>
+                <div className={s.field}>
                   <label htmlFor="field-contact">
                     Телеграм, телефон или почта
                   </label>
@@ -98,13 +96,13 @@ export default function Contact() {
                     }
                   />
                   {errors.contact && (
-                    <p className={styles.error} id="field-contact-error">
+                    <p className={s.error} id="field-contact-error">
                       {errors.contact}
                     </p>
                   )}
                 </div>
 
-                <div className={styles.field}>
+                <div className={s.field}>
                   <label htmlFor="field-question">
                     Что хотелось бы узнать? · необязательно
                   </label>
@@ -118,7 +116,7 @@ export default function Contact() {
                 </div>
 
                 <button
-                  className={styles.submit}
+                  className={s.submit}
                   type="submit"
                   disabled={status === "submitting"}
                 >

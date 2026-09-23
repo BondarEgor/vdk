@@ -1,17 +1,20 @@
+import { Card } from "../../components/card/index.tsx";
+import { Col } from "../../shared/col/index.tsx";
 import Reveal from "../../shared/reveal/Reveal.tsx";
-import styles from "./OneDay.module.css";
+import { Row } from "../../shared/row/index.tsx";
+import s from "./OneDay.module.css";
 
 export default function OneDay() {
   return (
-    <section className={styles.section}>
+    <section className={s.section}>
       <div className="wrap">
         <Reveal>
-          <p className={styles.overline}>один день</p>
-          <h2 className={styles.title}>Жизнь у моря выглядит так</h2>
+          <p className={s.overline}>один день</p>
+          <h2 className={s.title}>Жизнь у моря выглядит так</h2>
         </Reveal>
 
-        <div className={styles.grid}>
-          <Reveal className={styles.morning}>
+        <div className={s.grid}>
+          <Reveal className={s.morning}>
             <figure>
               <img
                 src="/images/morning.webp"
@@ -23,18 +26,18 @@ export default function OneDay() {
                 alt="Чашка кофе на подоконнике, за окном — рассвет над бухтой и мостом"
               />
               <figcaption>
-                <p className={styles.time}>
+                <p className={s.time}>
                   <b>07:00</b>
                   <span>утро</span>
                 </p>
-                <p className={styles.caption}>
+                <p className={s.caption}>
                   Утро начинается с вида, который обычно оставляют для выходных.
                 </p>
               </figcaption>
             </figure>
           </Reveal>
 
-          <Reveal delay={140} className={styles.day}>
+          <Reveal delay={140} className={s.day}>
             <figure>
               <img
                 src="/images/day.webp"
@@ -46,36 +49,11 @@ export default function OneDay() {
                 alt="Пешеходная набережная днём: люди, порт и мост через бухту"
               />
               <figcaption>
-                <p className={styles.time}>
+                <p className={s.time}>
                   <b>13:00</b>
                   <span>день</span>
                 </p>
-                <p className={styles.caption}>
-                  Обед можно вынести на набережную.
-                </p>
-              </figcaption>
-            </figure>
-          </Reveal>
-
-          <Reveal delay={100} className={styles.evening}>
-            <figure>
-              <img
-                src="/images/evening.webp"
-                srcSet="/images/evening-960.webp 960w, /images/evening.webp 1584w"
-                sizes="(max-width: 900px) 94vw, 80vw"
-                width={1584}
-                height={672}
-                loading="lazy"
-                alt="Вечерняя панорама Владивостока: огни города и моста над бухтой"
-              />
-              <figcaption>
-                <p className={styles.time}>
-                  <b>21:00</b>
-                  <span>вечер</span>
-                </p>
-                <p className={styles.caption}>
-                  А вечером город снова меняет свет.
-                </p>
+                <p className={s.caption}>Обед можно вынести на набережную.</p>
               </figcaption>
             </figure>
           </Reveal>

@@ -6,8 +6,8 @@
   --milk: #f4f0e8;
   --dawn: #e78a54;
   --dawn-soft: #f0b18c;
-  --font-display: 'Unbounded', system-ui, sans-serif;
-  --font-body: 'Manrope', system-ui, sans-serif;
+  --font-display: "Unbounded", system-ui, sans-serif;
+  --font-body: "Manrope", system-ui, sans-serif;
 }
 
 *,

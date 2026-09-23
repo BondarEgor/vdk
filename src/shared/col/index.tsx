@@ -6,13 +6,12 @@ type Props = Pick<
   CSSProperties,
   "gap" | "alignItems" | "justifyContent" | "alignSelf"
 > & {
-  className?: string;
   children: ReactNode;
+  className?: string;
 };
-
-export const Row = ({ children, className, ...styles }: Props) => {
+export const Col = ({ children, className, ...styles }: Props) => {
   return (
-    <div style={styles} className={cn(s.row, className)}>
+    <div style={styles} className={cn(s.col, className)}>
       {children}
     </div>
   );

@@ -1,19 +1,17 @@
 import Reveal from "../../shared/reveal/Reveal.tsx";
-import styles from "./Contrasts.module.css";
+import s from "./Contrasts.module.css";
 
 export default function Contrasts() {
   return (
-    <section className={styles.section}>
+    <section className={s.section}>
       <div className="wrap">
         <Reveal>
-          <p className={styles.overline}>город контрастов</p>
-          <h2 className={styles.title}>
-            Город, где всё рядом — и всё большое.
-          </h2>
+          <p className={s.overline}>город контрастов</p>
+          <h2 className={s.title}>Город, где всё рядом — и всё большое.</h2>
         </Reveal>
 
-        <div className={styles.collage}>
-          <Reveal className={styles.sea}>
+        <div className={s.collage}>
+          <Reveal className={s.sea}>
             <figure>
               <img
                 src="/images/coast.webp"
@@ -24,13 +22,13 @@ export default function Contrasts() {
                 loading="lazy"
                 alt="Скалистый берег моря в тумане, на горизонте — маяк"
               />
-              <figcaption className={styles.seaCaption}>
+              <figcaption className={s.seaCaption}>
                 Море здесь — не событие, а часть маршрута.
               </figcaption>
             </figure>
           </Reveal>
 
-          <Reveal delay={120} className={styles.asia}>
+          <Reveal delay={120} className={s.asia}>
             <h3>Азия рядом</h3>
             <ul>
               <li>
@@ -51,7 +49,7 @@ export default function Contrasts() {
             />
           </Reveal>
 
-          <Reveal delay={80} className={styles.food}>
+          <Reveal delay={80} className={s.food}>
             <h3>Море на столе</h3>
             <p>
               Гребешок, краб и пян-се с набережной — не гастрономический туризм,
@@ -59,7 +57,7 @@ export default function Contrasts() {
             </p>
           </Reveal>
 
-          <Reveal delay={160} className={styles.sopki}>
+          <Reveal delay={160} className={s.sopki}>
             <figure>
               <img
                 src="/images/sopki.webp"
@@ -77,8 +75,8 @@ export default function Contrasts() {
             </figure>
           </Reveal>
 
-          <Reveal delay={220} className={styles.geo}>
-            <p className={styles.coords}>
+          <Reveal delay={220} className={s.geo}>
+            <p className={s.coords}>
               43°07′ с. ш.
               <br />
               131°53′ в. д.

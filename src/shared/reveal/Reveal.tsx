@@ -1,5 +1,5 @@
 import { ReactNode, useEffect, useRef, useState } from "react";
-import styles from "./Reveal.module.css";
+import s from "./Reveal.module.css";
 
 type Props = {
   children: ReactNode;
@@ -35,7 +35,7 @@ export default function Reveal({ children, delay = 0, className = "" }: Props) {
     <div
       ref={ref}
       style={delay ? { "--d": `${delay}ms` } : undefined}
-      className={`${styles.reveal} ${shown ? styles.shown : ""} ${className}`.trim()}
+      className={`${s.reveal} ${shown ? s.shown : ""} ${className}`.trim()}
     >
       {children}
     </div>

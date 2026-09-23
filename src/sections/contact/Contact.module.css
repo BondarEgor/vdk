@@ -1,9 +1,5 @@
 .section {
-  background: var(--milk);
   padding-block: clamp(5rem, 13vh, 9.5rem);
-  position: sticky;
-  top: 60px;
-  z-index: 5;
   height: 100svh;
 }
 

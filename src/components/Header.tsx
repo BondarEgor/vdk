@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import styles from "./Header.module.css";
+import s from "./Header.module.css";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -12,11 +12,11 @@ export default function Header() {
   }, []);
 
   return (
-    <header className={`${styles.header} ${scrolled ? styles.scrolled : ""}`}>
-      <a className={styles.logo} href="#top">
+    <header className={`${s.header} ${scrolled ? s.scrolled : ""}`}>
+      <a className={s.logo} href="#top">
         РелокацияРФ<span>.</span>
       </a>
-      <a className={styles.cta} href="#contact">
+      <a className={s.cta} href="#contact">
         Узнать о переезде
       </a>
     </header>

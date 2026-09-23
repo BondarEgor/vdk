@@ -1,0 +1,150 @@
+.container {
+  padding: 44px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 44px;
+
+  background: rgba(38, 47, 37, 0.275);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 28px;
+
+  box-shadow:
+    0 20px 80px rgba(0, 0, 0, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.22);
+
+  backdrop-filter: blur(14px) saturate(115%);
+  -webkit-backdrop-filter: blur(14px) saturate(115%);
+}
+
+.headingContainer {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 20px;
+
+  @media (min-width: 900px) {
+    justify-content: space-between;
+    flex-direction: row;
+  }
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  max-width: 560px;
+  padding-bottom: 28px;
+
+  border-bottom: 1px solid #94a3b8;
+}
+
+.timeZone {
+  min-width: 317px;
+  background-color: #00000020;
+  color: white;
+  padding: 9px 15px;
+  border-radius: 12px;
+  border: 1px solid #ffffff10;
+  height: max-content;
+}
+
+.switch {
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+.gates {
+  color: #cbd5e1;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.economy {
+  color: white;
+  font-size: 30px;
+  line-height: 36px;
+}
+
+.vdk {
+  color: #cbd5e1;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.image {
+  min-width: 0;
+  overflow: hidden;
+  border-radius: 24px;
+}
+
+.image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  object-fit: cover;
+}
+
+.card {
+  height: 100%;
+}
+
+.cardLabel {
+  font-size: 12px;
+  line-height: 16px;
+  color: #cbd5e1;
+}
+
+.cardMain {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cardTitle {
+  font-size: 22px;
+  line-height: 28px;
+  color: white;
+}
+
+.cardDescription {
+  margin: 0;
+  font-size: 14px;
+  line-height: 20px;
+  color: #cbd5e1;
+}
+
+.cardFacts {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  font-size: 12px;
+  line-height: 16px;
+  color: #cbd5e1;
+}
+
+@media (max-width: 900px) {
+  .container {
+    padding: 20px;
+  }
+
+  .wrapper {
+    padding: 24px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
