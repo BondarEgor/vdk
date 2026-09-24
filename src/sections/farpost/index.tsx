@@ -3,97 +3,24 @@ import { Card } from "../../components/card/index.tsx";
 import { Col } from "../../shared/col/index.tsx";
 import Reveal from "../../shared/reveal/Reveal.tsx";
 import { Row } from "../../shared/row/index.tsx";
+import { cards } from "./cards.ts";
 import s from "./styles.module.css";
 
-const cards = {
-  initiative: {
-    header: "01 / Инициатива",
-    title: "РЕГИОНАЛЬНАЯ ПОДДЕРЖКА",
-    text: "Комплексные меры стимулирования бизнеса, налоговые льготы для резидентов и инвестиционных проектов Дальнего Востока.",
-    footer: [
-      "Приоритет: Высокий",
-      "Субсидирование ставок: Инвестпроекты",
-      "Инфраструктура: Готовые площадки",
-      "Окно инвестора: Одно окно КРДВ",
-    ],
-  },
-
-  regime: {
-    header: "02 / Режим",
-    title: "ТОР И СВОБОДНЫЙ ПОРТ",
-    text: "Уникальный преференциальный режим с упрощенным таможенным и налоговым регулированием для резидентов.",
-    footer: [
-      "Свободная зона",
-      "Таможенная пошлина: 0% (СТЗ)",
-      "Страховые взносы: 7.6% вместо 30%",
-      "Ускоренное возмещение: НДС за 10 дней",
-      "Налог на прибыль (первые 5 лет): 0%",
-    ],
-  },
-
-  transport: {
-    header: "03 / Транспорт",
-    title: "МОРСКАЯ ЛОГИСТИКА",
-    text: "Мощнейшие глубоководные порты, контейнерные терминалы и интеграция в международные коридоры.",
-    footer: [
-      "Хаб АТР",
-      "Грузооборот акватории: Рекордный рост",
-      "Связанность с Транссибом: Прямой стык",
-      "Навигация: 365 дней / год",
-    ],
-  },
-
-  culture: {
-    header: "04 / Культура",
-    title: "ТУРИЗМ И КУЛЬТУРА",
-    text: "Уникальная архитектура, Приморская сцена Мариинского театра, филиалы Эрмитажа и Третьяковской галереи.",
-    footer: [
-      "Направление №1",
-      "Театральная сцена: Мариинский театр",
-      "Музейный квартал: Эрмитаж & Третьяковка",
-      "Событийный поток: ВЭФ, фестивали",
-    ],
-  },
-
-  scale: {
-    header: "05 / Масштаб",
-    title: "АРКТИКО-ТИХООКЕАНСКИЙ УЗЕЛ",
-    text: "Стратегический форпост на пересечении морских путей Северного морского пути и глобальных линий стран Восточной Азии.",
-    footer: [
-      "Глобальный вектор",
-      "Сокращение плеча: до 40% по СМП",
-      "Каботажные рейсы: Регулярные",
-      "Азиатские рынки: Китай, Вьетнам, Индия",
-    ],
-  },
-
-  investment: {
-    header: "06 / Инвестиции",
-    title: "СПЕЦПРОГРАММЫ",
-    text: "Льготное финансирование проектов развития, дальневосточная ипотека и программа «Гектар на Дальнем Востоке».",
-    footer: [
-      "Инструменты роста",
-      "Дальневосточная ипотека: 2% годовых",
-      "Земельный гектар: Бесплатно online",
-      "ФРДВ инструменты: Фондирование капзатрат",
-    ],
-  },
-};
-
-const renderCard = (card: (typeof cards)[keyof typeof cards], gap: number) => (
+const renderCard = (card: (typeof cards)[keyof typeof cards]) => (
   <Card
-    gap={gap}
-    header={<span>{card.header}</span>}
+    header={<span className={s.cardHeader}>{card.header}</span>}
     main={
       <Col gap={8}>
-        <span>{card.title}</span>
-        <span>{card.text}</span>
+        <span className={s.cardTitle}>{card.title}</span>
+        <span className={s.cardText}>{card.text}</span>
       </Col>
     }
     footer={
       <Col gap={6}>
         {card.footer.map((item) => (
-          <span key={item}>{item}</span>
+          <span key={item} className={s.cardFact}>
+            {item}
+          </span>
         ))}
       </Col>
     }
@@ -220,21 +147,44 @@ export default function FarPost() {
 
         <Reveal delay={150}>
           <div className={s.grid}>
-            {renderCard(cards.initiative, 120)}
-            {renderImage("/images/asia-port-560.webp", "Владивосток")}
+            {renderImage("/images/evening.webp", "Владивосток, вид на бухту")}
+            {renderCard(cards.initiative)}
 
-            {renderImage("/images/bay-city-640.webp", "Владивосток")}
-            {renderCard(cards.regime, 32)}
+            {renderCard(cards.regime)}
+            {renderImage("/images/asia-port.webp", "Порт Владивостока")}
 
-            {renderCard(cards.transport, 224)}
-            {renderImage("/images/coast-900.webp", "Приморский край")}
+            {renderImage("/images/bay-city.webp", "Город на берегу бухты")}
+            {renderCard(cards.transport)}
 
-            {renderCard(cards.culture, 36)}
-            {renderCard(cards.scale, 28)}
+            {renderCard(cards.culture)}
+            {renderCard(cards.scale)}
 
-            {renderCard(cards.investment, 330)}
-            {renderImage("/images/coast-900.webp", "Приморский край")}
+            {renderCard(cards.investment)}
+            {renderImage("/images/hero-1376.webp", "Владивосток с высоты")}
           </div>
+        </Reveal>
+
+        <Reveal delay={200}>
+          <Row
+            justifyContent="space-between"
+            alignItems="center"
+            gap={16}
+            className={s.summary}
+          >
+            <span className={s.summaryText}>
+              Стратегический профиль — комплексная интеграция всех режимов и
+              инструментов развития региона.
+            </span>
+
+            <Row gap={12}>
+              <a className={s.linkGhost} href="#profile">
+                Смотреть профиль
+              </a>
+              <a className={s.linkAccent} href="#contact">
+                Начать проект →
+              </a>
+            </Row>
+          </Row>
         </Reveal>
       </div>
     </section>
